@@ -89,9 +89,21 @@ function updateBalls() {
         if (balls[i].x > WINDOW_WIDTH - RADIUS) {
             balls[i].x = WINDOW_WIDTH - RADIUS;
             balls[i].vx = -balls[i].vx;
-        }
-        
+        }   
     }
+
+    var count = 0;
+    for (let i = 0; i < balls.length; i++) {
+        if (balls[i].x < WINDOW_WIDTH + RADIUS && balls[i].x + RADIUS > 0) {
+            balls[count++] = balls[i];
+        }   
+    }
+
+    while(count < balls.length) {
+        balls.pop();
+    }
+
+    console.log(balls.length)
 }
 
 function addBalls( x , y , num ){
