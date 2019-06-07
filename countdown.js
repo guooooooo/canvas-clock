@@ -14,6 +14,15 @@ const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FF
 
 window.onload = function() {
 
+    WINDOW_WIDTH = document.body.clientWidth;
+    WINDOW_HEIGHT = document.body.clientHeight;
+    console.log(document.body.clientHeight);
+
+    MARGIN_LEFT = Math.round(WINDOW_WIDTH /10);
+    RADIUS = Math.round(WINDOW_WIDTH * 4 / 5 / 108)-1;
+
+    MARGIN_TOP = Math.round(WINDOW_HEIGHT /5);
+
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     
@@ -103,7 +112,6 @@ function updateBalls() {
         balls.pop();
     }
 
-    console.log(balls.length)
 }
 
 function addBalls( x , y , num ){
