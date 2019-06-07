@@ -4,7 +4,9 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 
-var endTime = new Date(2019,5,8,12,0,0);
+var endTime = new Date();
+endTime.setTime(endTime.getTime() + 10*3600*1000);
+
 var curShowTimeSeconds = 0;
 
 var balls = [];
